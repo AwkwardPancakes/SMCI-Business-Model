@@ -478,7 +478,9 @@ footer{background:#021423;border-color:#0b8558}
   from { --smci-frame-angle: 0deg; }
   to   { --smci-frame-angle: 360deg; }
 }
-:root {
+.page figure.figure,
+.exhibit-zoom-preview,
+#lightbox img {
   --smci-frame-ring: conic-gradient(
     from var(--smci-frame-angle),
     #055036 0deg,

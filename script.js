@@ -76,3 +76,45 @@
     });
   }
 })();
+
+/* Desktop hover inspection — thumbnails stay compact in the document.
+   The source graphic opens at viewport scale without pixel downsampling in CSS. */
+(function(){
+  if(!window.matchMedia || !window.matchMedia('(hover: hover) and (pointer: fine)').matches)return;
+  const targets=[...document.querySelectorAll('.exhibit-pair .figure img')];
+  if(!targets.length)return;
+  const panel=document.createElement('div');
+  panel.className='exhibit-zoom-preview';
+  panel.setAttribute('aria-hidden','true');
+  const heading=document.createElement('div');
+  heading.className='zoom-heading';
+  const name=document.createElement('span');
+  const hint=document.createElement('span');
+  hint.textContent='FULL EXHIBIT  /  CLICK TO PIN';
+  heading.append(name,hint);
+  const large=document.createElement('img');
+  large.alt='';
+  panel.append(heading,large);
+  document.body.append(panel);
+  let active=null;
+  const hide=()=>{
+    panel.classList.remove('is-visible');
+    active=null;
+  };
+  const show=img=>{
+    if(!img.complete||!img.naturalWidth)return;
+    active=img;
+    name.textContent=img.alt||'SMCI DATA EXHIBIT';
+    if(large.src!==img.currentSrc&&large.src!==img.src)large.src=img.currentSrc||img.src;
+    panel.classList.add('is-visible');
+  };
+  targets.forEach(img=>{
+    img.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse')show(img)});
+    img.addEventListener('pointerleave',()=>{if(active===img)hide()});
+    img.addEventListener('click',hide);
+  });
+  window.addEventListener('scroll',hide,{passive:true});
+  window.addEventListener('resize',hide);
+  window.addEventListener('blur',hide);
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')hide()});
+})();

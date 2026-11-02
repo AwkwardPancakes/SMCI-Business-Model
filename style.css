@@ -463,3 +463,82 @@ footer{background:#021423;border-color:#0b8558}
 @media(prefers-reduced-motion:reduce){
   .exhibit-zoom-preview,.exhibit-pair .figure img{transition:none}
 }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   SMCI / ROTATING EMERALD FRAME
+   Visual-only edge animation. All original Power BI figure files remain untouched.
+   Animated angle is a typed CSS property to keep the glow confined to the border.
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@property --smci-frame-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes smci-frame-rotation {
+  from { --smci-frame-angle: 0deg; }
+  to   { --smci-frame-angle: 360deg; }
+}
+:root {
+  --smci-frame-ring: conic-gradient(
+    from var(--smci-frame-angle),
+    #055036 0deg,
+    #055036 137deg,
+    #086341 184deg,
+    #12905d 221deg,
+    #5bdfa4 251deg,
+    #c5ffdf 268deg,
+    #15a36b 291deg,
+    #07573a 329deg,
+    #055036 360deg
+  );
+}
+/* Frame stays intact and readable: only the 5px border changes color. */
+.page figure.figure,
+.page .exhibit-pair figure.figure,
+.page .exhibit-pair figure.photo,
+.page .exhibit-pair figure.process {
+  position: relative;
+  overflow: hidden;
+  border: 5px solid #08784d;
+  border-color: transparent;
+  background: linear-gradient(#f6faf9, #f6faf9) padding-box,
+              var(--smci-frame-ring) border-box;
+  box-shadow: 0 0 0 1px #105a41, 0 0 14px #0876503a, 0 8px 20px #0005;
+  animation: smci-frame-rotation 7s linear infinite;
+  transform: translateZ(0);
+}
+.page .exhibit-pair figure.figure:hover,
+.page figure.figure:hover {
+  box-shadow: 0 0 0 1px #2ba475, 0 0 24px #20bb7647, 0 8px 20px #0006;
+  animation-duration: 3.75s;
+}
+/* A clean white panel guarantees the graphs themselves do not tint or move. */
+.page .exhibit-pair figure.figure img,
+.page figure.figure img {
+  background: #fff;
+  animation: none;
+}
+.exhibit-zoom-preview {
+  border: 7px solid transparent;
+  background: linear-gradient(#031b2df5, #031b2df5) padding-box,
+              var(--smci-frame-ring) border-box;
+  animation: smci-frame-rotation 7s linear infinite;
+  outline: 1px solid #1b8358;
+}
+#lightbox img {
+  border: 6px solid transparent;
+  background: linear-gradient(#fff, #fff) padding-box,
+              var(--smci-frame-ring) border-box;
+  animation: smci-frame-rotation 7s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .page figure.figure,
+  .page .exhibit-pair figure.figure,
+  .page .exhibit-pair figure.photo,
+  .page .exhibit-pair figure.process,
+  .exhibit-zoom-preview,
+  #lightbox img {
+    animation: none !important;
+    --smci-frame-angle: 260deg;
+  }
+}

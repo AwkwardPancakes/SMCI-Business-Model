@@ -544,3 +544,107 @@ footer{background:#021423;border-color:#0b8558}
     --smci-frame-angle: 260deg;
   }
 }
+
+
+/* ═══════════ SMCI / WEEK 02 INTEGRATION ═══════════ */
+/* Five-chapter publication navigation */
+.head-inner{max-width:1680px}
+.nav a{padding-left:clamp(8px,1.17vw,19px);padding-right:clamp(8px,1.17vw,19px);font-size:clamp(10px,.94vw,12.5px);letter-spacing:-.01em}
+.nav a:nth-child(3),.nav a:nth-child(4){white-space:nowrap}
+.brand-type b{font-size:25px}
+@media(max-width:1210px){
+  .head-inner{gap:10px;padding-left:20px;padding-right:20px}
+  .brand-emblem{width:38px;height:38px;flex-shrink:0}
+  .brand-type small{font-size:7px}
+  .header-meta{display:none}
+  .nav a{padding-left:9px;padding-right:9px;font-size:10.7px}
+}
+@media(max-width:1000px){
+  .head-inner{flex-wrap:wrap;padding:9px 20px 0}
+  .brand{padding:5px 0 8px;width:100%}
+  .nav{width:100%;height:57px;margin:0;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;scrollbar-color:#396678 #06233a}
+  .nav a{padding-left:16px;padding-right:16px;font-size:12px;flex-shrink:0}
+}
+@media(max-width:540px){
+  .nav{height:53px}
+  .nav a{font-size:11px;padding-left:13px;padding-right:13px}
+  .brand-type b{font-size:23px}
+}
+
+/* Visual vocabulary for two additional research chapters */
+.art-week2 .art-hud{color:#d0e8f1}
+.tech-map{position:absolute;top:24%;left:8%;right:8%;display:grid;gap:22px}
+.tech-row{display:grid;grid-template-columns:1fr 16px 1fr 16px 1fr;gap:5px;align-items:center}
+.tech-row span{border:1px solid #568aa2;border-top:3px solid #3bbe87;background:#0b3b59;padding:16px 5px;color:#edfbff;text-align:center;font:600 clamp(11px,1.2vw,17px)/1 var(--display);letter-spacing:.05em}
+.tech-row i{font:700 20px var(--mono);color:#68dca8;text-align:center;font-style:normal}
+.tech-row.mid{padding-left:12%;padding-right:12%}
+.tech-row.mid span{border-top-color:#88d9a9}
+.tech-readout{position:absolute;left:8%;right:8%;bottom:13%;border-top:1px solid #538c9f;display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-top:7px}
+.tech-readout span{font:500 8px/1.5 var(--mono);color:#a1cfda}
+.tech-readout strong{font:700 43px/.98 var(--display);color:#a0efb6}
+.tech-readout strong small{font:600 19px var(--display)}
+.tech-price{position:absolute;left:9%;right:9%;top:23%;border:1px solid #41738c;border-top:4px solid #30c68b;background:#093853;padding:clamp(16px,2vw,28px)}
+.tech-price>span{font:600 10px var(--mono);color:#b2d9e8;letter-spacing:.06em}
+.tech-price>strong{display:block;color:#e9fff1;font:700 clamp(65px,8vw,112px)/1 var(--display);letter-spacing:-.02em;padding:9px 0}
+.tech-price>strong small{font-size:.45em;color:#62dca0}
+.tech-price>em{display:block;color:#64dca2;font:500 10px var(--mono);font-style:normal}
+.price-lines{margin-top:22px;border-top:1px solid #46768c}
+.price-lines div{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #2d5d75;padding:7px 0;color:#b6d6e2;font:500 9px var(--mono)}
+.price-lines b{color:#9af4be}
+.tech-chips{position:absolute;bottom:14%;left:9%;right:9%;display:flex;flex-wrap:wrap;gap:8px}
+.tech-chips span{border:1px solid #347861;background:#0b4349;padding:5px 9px;font:500 8px var(--mono);color:#a5eec6}
+@media(max-width:1180px){.tech-map{top:21%;gap:14px}.tech-row span{padding:12px 3px}.tech-price{top:17%}.tech-chips{bottom:16%}}
+@media(max-width:860px){
+  .tech-map{top:16%;gap:20px;left:12%;right:12%}
+  .tech-row span{font-size:14px}
+  .tech-readout{bottom:14%}
+  .tech-price{top:12%;left:20%;right:20%;padding:16px}
+  .tech-price>strong{font-size:73px}
+  .tech-chips{left:20%;right:20%;bottom:10%}
+}
+@media(max-width:540px){
+  .tech-map{left:6%;right:6%;top:20%;gap:17px}
+  .tech-row{grid-template-columns:1fr 11px 1fr 11px 1fr;gap:3px}
+  .tech-row span{font-size:11px;padding:11px 3px}
+  .tech-row i{font-size:14px}
+  .tech-readout{bottom:14%}
+  .tech-price{left:10%;right:10%;top:17%;padding:13px}
+  .tech-price>strong{font-size:65px}
+  .price-lines{margin-top:8px}
+  .price-lines div{padding:3px 0;font-size:8px}
+  .tech-chips{left:10%;right:10%;bottom:12%}
+  .tech-chips span{font-size:7px}
+}
+
+/* Week 02 exhibits keep the Week 01 emerald frame rotation and magnification. */
+.exhibit-diagram{grid-template-columns:minmax(0,1.14fr) minmax(0,.86fr)}
+.exhibit-diagram .exhibit-text p{line-height:1.75}
+.exhibit-pair .exhibit-text p a{color:#9febc5;text-decoration:underline;text-underline-offset:2px}
+.page .exhibit-pair .figure.process{max-width:none;min-width:0}
+.page .exhibit-pair .figure.process img{min-height:0;object-fit:contain}
+.exhibit-pair:has(img[src*="Fig38_"]) .exhibit-text{justify-content:center}
+.exhibit-pair .figure figcaption{overflow-wrap:anywhere}
+.exhibit-pair .figure img{height:auto;max-height:440px;object-fit:contain}
+.exhibit-diagram .figure img{max-height:540px}
+@media(max-width:800px){
+  .exhibit-diagram{grid-template-columns:1fr}
+  .exhibit-pair .figure img{max-height:400px}
+  .exhibit-diagram .figure img{max-height:520px}
+}
+@media(max-width:540px){
+  .exhibit-pair .figure img{max-height:300px}
+}
+
+/* If the user-supplied image export has not yet been placed at a public URL,
+   preserve the required figure caption with an honest, distinct asset status. */
+.figure figure{margin:0}
+.figure-missing{background:#f0f5f2;border-top:1px solid #b8d9c6;min-height:125px;padding:22px 18px;display:flex;gap:12px;align-items:flex-start}
+.figure-missing i{font-style:normal;color:#006e45;font:700 20px var(--display)}
+.figure-missing .file-status strong{display:block;font:700 13px var(--body);color:#19563e;letter-spacing:.02em}
+.figure-missing .file-status small{display:block;color:#54756c;margin-top:4px;font:500 10px/1.7 var(--mono);overflow-wrap:anywhere}
+.figure-missing+figcaption{border-top:1px solid #cae1d0}
+.reference-scope{background:#0a334c;border-top:3px solid #2ebc7b;border-bottom:1px solid #3b6772;padding:19px 23px 17px;margin:6px 0 18px}
+.reference-scope .scope-label{display:block;color:#77e3ab;font:600 9px var(--mono);letter-spacing:.075em}
+.reference-scope strong{display:block;color:#edf8ff;font:700 31px var(--display);margin:5px 0}
+.page .reference-scope p{margin:0;color:#c7deeb;font-size:12.5px;max-width:840px;line-height:1.75}
+.chapter-refs .page>p{overflow-wrap:anywhere}

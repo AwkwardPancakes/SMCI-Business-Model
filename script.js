@@ -29,10 +29,38 @@
       img.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open(img)}});
       // External images must not leave a broken-image placeholder.
       img.addEventListener('error',()=>{
+        const figure=img.closest('figure');
+        if(!figure)return;
         if(/^https?:/.test(img.getAttribute('src')||'')){
-          const figure=img.closest('figure');
-          if(figure){figure.style.display='none';}
+          figure.style.display='none';
+          return;
         }
+        const original=img.dataset.originalFilename || (img.getAttribute('src')||'').split('/').pop();
+        img.dataset.originalFilename=original;
+        const weekTwo=/^Fig(?:19|2[0-9]|3[0-8])_/.test(original);
+        const prefixes=weekTwo?['assets/','images/','week2/','Week2_Images/','assets/week2/']:[];
+        const attempt=Number(img.dataset.assetAttempt||0);
+        if(attempt<prefixes.length){
+          img.dataset.assetAttempt=String(attempt+1);
+          img.src=prefixes[attempt]+original;
+          return;
+        }
+        img.style.display='none';
+        if(figure.querySelector('.figure-missing'))return;
+        const unavailable=document.createElement('div');
+        unavailable.className='figure-missing';
+        const marker=document.createElement('i');
+        marker.textContent='!';
+        marker.setAttribute('aria-hidden','true');
+        const detail=document.createElement('div');
+        detail.className='file-status';
+        const title=document.createElement('strong');
+        title.textContent='Power BI exhibit awaiting publication';
+        const source=document.createElement('small');
+        source.textContent='Required file: '+original;
+        detail.append(title,source);
+        unavailable.append(marker,detail);
+        figure.insertBefore(unavailable,figure.querySelector('figcaption'));
       });
     });
     close?.addEventListener('click',shut);

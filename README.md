@@ -16,14 +16,13 @@ The design uses a deep navy background, green animated exhibit frames, technical
 
 ## Figure files
 
-Every Power BI figure is referenced directly from a website page so all assignment elements remain on the primary site.
+All **38 Power BI figure exports** have been verified in the repository root.
 
-- Week 1: Figures 01–18 (already committed in the repository root).
-- Week 2: Figures 19–38, named exactly as in `SMCI_Week2_Website_Content.md`, should be committed as **individual PNG files**, ideally in the repository root.
-- The website tries a small set of common Week 2 image subdirectories when a root-level PNG is missing.
-- A ZIP archive **alone is not sufficient**: GitHub Pages serves files but does not extract archives. If the images have not been committed individually, the site displays an explicit "Power BI exhibit awaiting publication" notice and preserves the caption.
-
-Example Week 2 image paths: `Fig19_Event_Simulation_Flow.png`, `Fig30_Causal_Loop_Domestic.png`, `Fig38_Week2_Executive_Dashboard.png`.
+- **Week 1:** Figures 01–18, used on the Introduction and Proposed Business Model pages.
+- **Week 2:** Figures 19–38, used on the Business Process Analysis and Pricing Analysis pages.
+- Each Week 2 HTML image source directly matches the uploaded GitHub PNG filename. No external image service or ZIP extraction is required.
+- Images appear with rotating green borders, load responsively, expand on desktop hover, and open a larger view when clicked or tapped.
+- The original Power BI workspace and calculation workbook are separate deliverables.
 
 ## Deployment
 

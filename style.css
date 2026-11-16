@@ -648,3 +648,107 @@ footer{background:#021423;border-color:#0b8558}
 .reference-scope strong{display:block;color:#edf8ff;font:700 31px var(--display);margin:5px 0}
 .page .reference-scope p{margin:0;color:#c7deeb;font-size:12.5px;max-width:840px;line-height:1.75}
 .chapter-refs .page>p{overflow-wrap:anywhere}
+
+
+/* ────────── WEEK 03: OPERATIONS / QUALITY / INVESTMENT ────────── */
+/* Seven-section research journal; new sections use the same SMCI color system. */
+.nav{scrollbar-width:thin;scrollbar-color:#26704e #072339}
+.nav a{padding-left:clamp(8px,1.05vw,16px);padding-right:clamp(8px,1.05vw,16px);font-size:clamp(10px,.85vw,12px)}
+.nav a[aria-current="page"]{box-shadow:inset 0 -1px #37c885}
+@media(max-width:1340px){
+  .head-inner{flex-wrap:wrap;gap:5px;padding:8px 22px 0}
+  .brand{padding:4px 0 7px;width:100%}
+  .nav{width:100%;margin:0;height:53px;overflow-x:auto;overflow-y:hidden}
+  .nav a{font-size:12px;flex-shrink:0;padding:0 17px;letter-spacing:0}
+  .header-meta{display:none}
+}
+@media(max-width:600px){
+  .head-inner{padding-left:14px;padding-right:14px}
+  .nav{height:52px}
+  .nav a{font-size:11px;padding:0 13px}
+}
+
+/* CSS-rendered operations schematic: all text stays selectable and sharp. */
+.art-week3{background-color:#062c48;background-size:31px 31px}
+.art-operations .ops-process{position:absolute;left:9%;right:9%;top:17%;display:grid;gap:16px}
+.ops-line{display:grid;grid-template-columns:1fr 22px 1fr;align-items:center;gap:12px}
+.ops-line div{background:linear-gradient(160deg,#0d4d62,#063450);border:1px solid #488fa0;border-top:4px solid #29cc8e;box-shadow:6px 6px 0 #041a2c;padding:11px 14px;min-height:88px;display:flex;flex-direction:column}
+.ops-line div b{color:#6fdca4;font:500 10px var(--mono)}
+.ops-line div strong{font:700 clamp(22px,2.3vw,33px)/1.1 var(--display);color:#f0fbff;letter-spacing:.045em;margin:4px 0}
+.ops-line div small{color:#add4df;font:500 8px var(--mono);letter-spacing:.03em}
+.ops-line i{font-style:normal;color:#6cdea9;font:700 20px var(--mono);text-align:center}
+.ops-progress{position:absolute;left:9%;right:9%;top:66%;border-top:1px solid #477a90;padding-top:12px;display:flex;flex-direction:column;gap:9px}
+.ops-progress>span{color:#a9d4e2;font:500 9px var(--mono);letter-spacing:.055em}
+.ops-progress>div{display:grid;grid-template-columns:40px 1fr 40px;align-items:center;gap:10px;color:#c6e4eb;font:500 9px var(--mono)}
+.ops-progress i{height:10px;background:#0b455d;border:1px solid #386c78;display:block}
+.ops-progress em{height:100%;display:block;background:linear-gradient(90deg,#006f4c,#59daa0)}
+.ops-progress strong{color:#9af3c3;text-align:right}
+.art-decisions .decision-system{position:absolute;top:22%;left:7%;right:7%;text-align:center}
+.decision-seed{border:1px solid #5a9b9d;border-top:4px solid #44d695;background:#0c4255;display:inline-flex;align-items:center;justify-content:space-between;gap:23px;min-width:185px;padding:10px 17px;color:#effef9;font:700 19px var(--display);letter-spacing:.04em}
+.decision-seed span{color:#83ebaa;font-size:20px}
+.decision-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:33px;position:relative}
+.decision-options::before{position:absolute;content:'';top:-19px;left:16.666%;right:16.666%;border-top:1px dashed #6dbda7}
+.decision-options>div{border:1px solid #447e86;border-top:4px solid #18895f;background:#0a364e;min-width:0;min-height:124px;text-align:left;padding:16px 10px 10px;position:relative}
+.decision-options>div:first-child{border-top-color:#72e5ad;background:#104954}
+.decision-options>div::before{content:'';position:absolute;top:-23px;left:50%;height:20px;border-left:1px dashed #6dbda7}
+.decision-options span{display:block;color:#b1d4e0;font:500 9px/1.4 var(--mono)}
+.decision-options strong{display:block;color:#eafff1;font:700 clamp(23px,2.3vw,36px)/1 var(--display);margin:14px 0 8px;white-space:nowrap}
+.decision-options small{font:500 8px var(--mono);color:#80deb4}
+.decision-footnote{position:absolute;top:77%;left:7%;right:7%;text-align:center;border-top:1px solid #467c87;padding-top:9px;color:#b3d2e2;font:500 8px var(--mono);letter-spacing:.035em}
+@media(max-width:1200px){
+  .ops-line div{padding:10px;min-height:80px}
+  .ops-line div strong{font-size:26px}
+  .ops-progress{top:68%}
+  .decision-options strong{font-size:23px}
+}
+@media(max-width:860px){
+  .art-operations .ops-process{top:13%;left:15%;right:15%;gap:10px}
+  .ops-line div{min-height:61px;padding:5px 10px}
+  .ops-line div strong{font-size:20px;margin:1px 0}
+  .ops-progress{top:68%;left:15%;right:15%;gap:6px}
+  .ops-progress>span{font-size:8px}
+  .decision-system{top:15%}
+  .art-decisions .decision-system{top:17%;left:12%;right:12%}
+  .decision-options{margin-top:24px}
+  .decision-options>div{min-height:100px;padding:11px 6px}
+  .decision-options strong{font-size:25px}
+  .decision-footnote{top:79%}
+}
+@media(max-width:540px){
+  .art-operations .ops-process{left:7%;right:7%;top:19%;gap:8px}
+  .ops-line{grid-template-columns:1fr 15px 1fr;gap:7px}
+  .ops-line div{min-height:58px;padding:5px 7px}
+  .ops-line div strong{font-size:19px}
+  .ops-line div small{font-size:6.5px}
+  .ops-line i{font-size:15px}
+  .ops-progress{left:8%;right:8%;top:70%}
+  .ops-progress>span{font-size:7px}
+  .ops-progress>div{font-size:8px}
+  .art-decisions .decision-system{top:19%;left:4%;right:4%}
+  .decision-seed{min-width:140px;padding:7px 11px;font-size:16px}
+  .decision-options{gap:6px;margin-top:18px}
+  .decision-options>div{min-height:80px;padding:8px 5px}
+  .decision-options>div::before{top:-17px;height:14px}
+  .decision-options::before{top:-14px}
+  .decision-options span{font-size:7px}
+  .decision-options strong{font-size:18px;margin:10px 0 6px}
+  .decision-options small{font-size:6px}
+  .decision-footnote{top:80%;font-size:7px}
+}
+
+/* Week 3 figure frames inherit the established animated emerald borders. */
+.chapter-operation .exhibit-pair,.chapter-decision .exhibit-pair{margin-top:20px;margin-bottom:26px}
+.chapter-operation .exhibit-pair .figure img,.chapter-decision .exhibit-pair .figure img{height:auto;max-height:440px;object-fit:contain}
+.chapter-operation .exhibit-diagram .figure img,.chapter-decision .exhibit-diagram .figure img{max-height:540px}
+.chapter-operation .page .exhibit-text p,.chapter-decision .page .exhibit-text p{line-height:1.76}
+.chapter-operation .page .table-wrap:has(th:nth-child(7)) table{min-width:1060px;font-size:12px}
+.chapter-operation .page .table-wrap:has(th:nth-child(7)) td:first-child{min-width:145px}
+.chapter-operation .page .table-wrap:has(th:nth-child(7)) td:nth-child(2){min-width:215px}
+.chapter-operation .table-wrap{scrollbar-color:#20835f #092b45;scrollbar-width:thin}
+.chapter-decision .page>ol>li{margin:6px 0 12px;padding:7px 11px;border-left:2px solid #197850;background:#0b3148}
+.chapter-decision .page>ol>li::marker{font-family:var(--mono);color:#72d9a5}
+@media(max-width:800px){
+  .chapter-operation .exhibit-pair,.chapter-decision .exhibit-pair{grid-template-columns:1fr}
+  .chapter-operation .exhibit-media,.chapter-decision .exhibit-media{max-width:100%}
+  .chapter-operation .page .exhibit-text p,.chapter-decision .page .exhibit-text p{font-size:14px}
+}

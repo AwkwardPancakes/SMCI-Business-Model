@@ -752,3 +752,118 @@ footer{background:#021423;border-color:#0b8558}
   .chapter-operation .exhibit-media,.chapter-decision .exhibit-media{max-width:100%}
   .chapter-operation .page .exhibit-text p,.chapter-decision .page .exhibit-text p{font-size:14px}
 }
+
+
+/* ═══════════ WEEK 04 / CUSTOMER INTELLIGENCE + HUMAN FACTORS ═══════════ */
+/* Nine tabs retain the corporate technical report look without cramping labels. */
+@media(max-width:1680px){
+ .head-inner{flex-wrap:wrap;gap:4px;padding:8px clamp(14px,3vw,45px) 0}
+ .brand{padding:2px 0 7px;width:100%}
+ .nav{width:100%;margin:0;height:55px;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;scrollbar-color:#248466 #08233a}
+ .nav a{flex-shrink:0;padding:0 16px;font-size:12px;white-space:nowrap}
+ .header-meta{display:none}
+}
+@media(min-width:1681px){
+ .nav{overflow-x:auto}
+ .nav a{padding-left:12px;padding-right:12px;font-size:11px}
+}
+.sidebar .toc-sub{padding-left:19px;font-size:11px;color:#a1bac9;border-left-color:#2c5268}
+.sidebar .toc-sub:hover{border-left-color:#48ce91}
+.art-week4{background-image:linear-gradient(#19527365 1px,transparent 1px),linear-gradient(90deg,#19527365 1px,transparent 1px);background-size:32px 32px}
+.w4-customer-grid{position:absolute;top:19%;left:8%;right:8%;display:grid;grid-template-columns:1.04fr 1fr;gap:20px;align-items:center}
+.w4-audience{display:grid;gap:10px}
+.w4-audience>div{border-left:3px solid #31be80;border-top:1px solid #447c92;border-bottom:1px solid #254e63;background:#0a3854;display:grid;grid-template-columns:1fr auto;align-items:center;gap:5px;padding:9px 13px}
+.w4-audience span{grid-column:1;grid-row:1;color:#acd4e1;font:500 9px/1.4 var(--mono)}
+.w4-audience strong{grid-column:2;grid-row:1 / span 2;color:#e8fff5;font:700 clamp(25px,2.6vw,40px)/1 var(--display)}
+.w4-audience small{grid-column:1;grid-row:2;color:#64dc9f;font:500 8px var(--mono)}
+.w4-ring{width:min(100%,260px);aspect-ratio:1;margin:auto;border-radius:50%;display:grid;place-items:center;background:conic-gradient(#47d594 0deg 240deg,#23657b 240deg 291deg,#184861 291deg 360deg);box-shadow:0 0 0 1px #449575,0 0 40px #20895a44;position:relative}
+.w4-ring::before{content:'';position:absolute;inset:18px;background:#092a44;border-radius:50%;border:1px solid #4a907a}
+.w4-ring-core{position:relative;z-index:1;text-align:center}
+.w4-ring-core span{display:block;color:#edfff6;font:700 clamp(60px,6.5vw,94px)/1 var(--display)}
+.w4-ring-core small{display:block;color:#9cd9bd;font:500 9px var(--mono)}
+.w4-channel{position:absolute;bottom:20%;left:8%;right:8%;display:flex;align-items:center;justify-content:center;gap:clamp(5px,.6vw,13px)}
+.w4-channel>span{padding:7px 9px;background:#0f4256;color:#b0ead0;border:1px solid #347c6e;font:500 clamp(7px,.7vw,10px) var(--mono);letter-spacing:.01em}
+.w4-channel>i{font:700 18px var(--mono);font-style:normal;color:#5ed6a0}
+.w4-ooda{position:absolute;top:18%;left:50%;transform:translateX(-50%);width:min(76%,360px);aspect-ratio:1;border:2px dashed #559f8b;border-radius:50%;box-shadow:inset 0 0 35px #0b553b33}
+.w4-ooda::before{content:'';position:absolute;inset:15%;border-radius:50%;border:1px solid #1c7983}
+.w4-ooda-node{position:absolute;min-width:115px;text-align:center;background:#0b3b52;border:1px solid #4c9b8c;border-top:3px solid #60d8a1;color:#f2fff8;padding:12px 6px;font:700 clamp(18px,1.8vw,28px) var(--display);box-shadow:0 7px 15px #0005}
+.w4-ooda-node span{display:block;color:#7ad7ac;font:500 9px var(--mono);margin-bottom:3px}
+.w4-ooda-node.n1{top:0;left:50%;transform:translate(-50%,-20%)}
+.w4-ooda-node.n2{top:50%;right:0;transform:translate(42%,-50%)}
+.w4-ooda-node.n3{bottom:0;left:50%;transform:translate(-50%,20%)}
+.w4-ooda-node.n4{top:50%;left:0;transform:translate(-42%,-50%)}
+.w4-ooda-core{position:absolute;inset:29%;border-radius:50%;background:#0a4353;display:flex;align-items:center;justify-content:center;flex-direction:column;border:1px solid #46aa89}
+.w4-ooda-core strong{font:700 clamp(29px,3vw,44px)/1 var(--display);color:#eefff4}
+.w4-ooda-core small{font:500 8px var(--mono);color:#86d7af;margin-top:7px}
+.w4-workforce{position:absolute;bottom:12%;left:12%;right:12%;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.w4-workforce>div{border-top:2px solid #39bb82;background:#0a3852;padding:8px 10px;text-align:center}
+.w4-workforce span{display:block;color:#ecfff4;font:700 20px var(--display)}
+.w4-workforce small{display:block;color:#8edbb4;font:500 8px var(--mono)}
+.chapter-customer .page .exhibit-text p,.chapter-human .page .exhibit-text p{line-height:1.78}
+.chapter-customer .exhibit-pair,.chapter-human .exhibit-pair{margin:23px 0 29px}
+.chapter-customer .page>h2,.chapter-human .page>h2{margin-top:61px}
+.chapter-customer .page>h3,.chapter-human .page>h3{margin-top:35px}
+.chapter-customer .page .table-wrap{scrollbar-width:thin;scrollbar-color:#278961 #0a304a}
+.chapter-customer .page .table-wrap:has(th:nth-child(6)) table{min-width:800px}
+.chapter-human .page li>ul{padding-left:18px;margin:8px 0 6px;border-left:1px solid #306e62}
+.chapter-human .page li>ul li{padding-left:4px}
+.chapter-human .page .exhibit-diagram{grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr)}
+.chapter-human .page .exhibit-diagram .figure img{max-height:550px}
+
+/* Live Power BI embed slot. A valid URL is required; the static Figure 53 stays visible. */
+.powerbi-module{margin:23px 0 32px;border:1px solid #33755e;border-top:4px solid #26b17b;background:#0b2e47;box-shadow:0 12px 30px #0002}
+.powerbi-head{display:flex;align-items:center;flex-wrap:wrap;gap:13px;padding:14px 18px;border-bottom:1px solid #31637a;background:#0a3a51}
+.powerbi-head strong{color:#eafff2;letter-spacing:.045em;font:700 12px var(--mono)}
+.powerbi-head small{margin-left:auto;color:#a8cfd7;font:500 9px var(--mono)}
+.powerbi-led{width:9px;height:9px;background:#b0a958;border:1px solid #e8d978;box-shadow:0 0 0 3px #acaa5b22;border-radius:50%;flex-shrink:0}
+.powerbi-module.is-connected .powerbi-led{background:#39d78d;border-color:#95f0ba;box-shadow:0 0 0 3px #2dd58c30}
+.powerbi-mount{min-height:235px;background:linear-gradient(120deg,#092840,#0c3c53);position:relative}
+.powerbi-mount iframe{display:block;width:100%;height:600px;max-width:100%;border:0;background:#f2f5f8}
+.powerbi-unavailable{min-height:235px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:10px;padding:24px;color:#e7f5fc}
+.powerbi-unavailable span{font:700 clamp(20px,2.7vw,31px) var(--display);letter-spacing:.035em}
+.page .powerbi-unavailable p{margin:0 auto;font:400 13px/1.7 var(--body);max-width:580px;color:#bcdae5}
+.powerbi-unavailable a{display:inline-block;padding:8px 12px;color:#b9ffdc;background:#0c5f45;border:1px solid #358c6b;font:600 10px var(--mono)}
+.powerbi-unavailable a:hover{background:#18815e;color:#fff;text-decoration:none}
+.page .powerbi-caption{padding:13px 17px;border-top:1px solid #275976;color:#93b5c8;font:400 11px/1.6 var(--body);margin:0;max-width:none}
+@media(max-width:1060px){
+ .w4-audience>div{padding:7px 8px}
+ .w4-audience strong{font-size:28px}
+ .w4-ooda-node{min-width:92px;padding:8px 5px;font-size:19px}
+}
+@media(max-width:860px){
+ .w4-customer-grid{top:15%;left:12%;right:12%;gap:15px}
+ .w4-ring{width:190px}
+ .w4-channel{bottom:14%;left:11%;right:11%}
+ .w4-ooda{top:10%;width:250px}
+ .w4-ooda-node{min-width:95px;font-size:20px}
+ .w4-workforce{bottom:10%;left:15%;right:15%}
+ .chapter-human .page .exhibit-diagram{grid-template-columns:1fr}
+}
+@media(max-width:540px){
+ .w4-customer-grid{left:5%;right:5%;top:22%;gap:8px}
+ .w4-audience{gap:5px}
+ .w4-audience>div{padding:5px 6px}
+ .w4-audience span{font-size:7px}
+ .w4-audience strong{font-size:23px}
+ .w4-audience small{font-size:6px}
+ .w4-ring{width:min(100%,135px)}
+ .w4-ring::before{inset:12px}
+ .w4-ring-core span{font-size:46px}
+ .w4-ring-core small{font-size:6px}
+ .w4-channel{bottom:17%;gap:3px;left:5%;right:5%}
+ .w4-channel>span{font-size:6px;padding:5px 4px}
+ .w4-channel>i{font-size:10px}
+ .w4-ooda{top:10%;width:200px}
+ .w4-ooda-node{min-width:76px;font-size:16px;padding:6px 4px}
+ .w4-ooda-node span{font-size:7px;margin:0}
+ .w4-ooda-core strong{font-size:27px}
+ .w4-ooda-core small{font-size:7px}
+ .w4-workforce{left:7%;right:7%;bottom:13%;gap:5px}
+ .w4-workforce>div{padding:6px}
+ .w4-workforce span{font-size:16px}
+ .w4-workforce small{font-size:7px}
+ .powerbi-mount iframe{height:510px}
+ .powerbi-head{gap:8px;padding:11px}
+ .powerbi-head small{margin-left:0;width:100%}
+ .powerbi-unavailable{padding:18px;min-height:235px}
+}

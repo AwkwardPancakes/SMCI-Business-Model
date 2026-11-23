@@ -867,3 +867,145 @@ footer{background:#021423;border-color:#0b8558}
  .powerbi-head small{margin-left:0;width:100%}
  .powerbi-unavailable{padding:18px;min-height:235px}
 }
+
+
+/* ──────────────────────────────────────────────────────────────────────────
+   WEEK 04 / SOURCE DRAWER — compact launcher, on-demand SharePoint preview
+   Only created by week4-powerbi-panel.js on Customer Relations / Human Resource.
+   The direct source link remains available even if Microsoft blocks iframes.
+   ────────────────────────────────────────────────────────────────────────── */
+.week4-powerbi-launcher{
+  position:fixed;right:clamp(14px,2.3vw,36px);bottom:clamp(16px,2.3vw,32px);
+  z-index:175;min-width:215px;max-width:calc(100vw - 28px);
+  display:flex;align-items:center;gap:12px;padding:12px 13px 12px 12px;
+  cursor:pointer;text-align:left;color:#ecfff5;background:#073750;
+  border:1px solid #369d74;border-left:4px solid #35cc8c;
+  border-radius:5px;box-shadow:0 9px 30px #0008,0 0 0 1px #1b744f55;
+  transition:transform .17s ease,background .17s ease,box-shadow .17s ease;
+}
+.week4-powerbi-launcher:hover,.week4-powerbi-launcher:focus-visible{
+  background:#105263;transform:translateY(-2px);
+  box-shadow:0 12px 36px #000b,0 0 0 2px #20bd7866;
+}
+.week4-powerbi-launcher .w4-launch-copy{flex:1;display:block;min-width:0}
+.week4-powerbi-launcher .w4-launch-copy small{
+  display:block;font:500 8px/1.5 var(--mono);color:#92d6b3;letter-spacing:.065em
+}
+.week4-powerbi-launcher .w4-launch-copy strong{
+  display:block;font:700 14px/1.3 var(--mono);color:#e7fff3;letter-spacing:.02em
+}
+.w4-launch-arrow{color:#a2efd0;font:700 22px/1 var(--display)}
+.w4-launch-indicator{
+  display:flex;align-items:flex-end;gap:3px;width:36px;height:34px;
+  padding:7px;background:#0e5e53;border:1px solid #49b787;border-radius:2px;flex-shrink:0
+}
+.w4-launch-indicator span{width:6px;background:#b1f4d0;display:block}
+.w4-launch-indicator span:nth-child(1){height:7px}
+.w4-launch-indicator span:nth-child(2){height:13px}
+.w4-launch-indicator span:nth-child(3){height:18px}
+body.w4-panel-is-open{overflow:hidden}
+.w4-powerbi-overlay[hidden],.w4-inline-preview[hidden]{display:none!important}
+.w4-powerbi-overlay{
+  z-index:420;position:fixed;inset:0;
+  background:rgba(1,15,28,.79);backdrop-filter:blur(5px);
+  display:flex;align-items:stretch;justify-content:flex-end;
+}
+.w4-powerbi-panel{
+  width:min(620px,100%);max-width:100%;height:100%;
+  background:#07243a;border-left:2px solid #39b580;
+  box-shadow:-15px 0 65px #0009;color:#effaff;
+  display:flex;flex-direction:column;min-height:0;
+  animation:w4-drawer-enter .22s ease-out both;
+}
+@keyframes w4-drawer-enter{
+  from{opacity:.5;transform:translateX(30px)}
+  to{opacity:1;transform:translateX(0)}
+}
+.w4-panel-top,.w4-panel-base{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  flex-shrink:0;background:#041728;font:600 10px var(--mono);
+  letter-spacing:.065em;color:#a7cbd8;
+}
+.w4-panel-top{border-bottom:1px solid #24634f;min-height:60px;padding:0 25px}
+.w4-panel-close{
+  width:36px;height:36px;flex-shrink:0;display:grid;place-items:center;
+  font:400 27px/1 var(--body);color:#eafff4;
+  cursor:pointer;background:#0b4051;border:1px solid #418f7c
+}
+.w4-panel-close:hover{background:#16715a}
+.w4-panel-scroll{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:24px clamp(18px,4.5vw,43px) 32px;scrollbar-color:#318c70 #092d46;scrollbar-width:thin}
+.w4-panel-kicker{display:flex;align-items:center;gap:9px;margin:0 0 12px;color:#8fdfb3;font:600 10px/1.5 var(--mono);letter-spacing:.08em}
+.w4-panel-status{display:inline-block;width:8px;height:8px;background:#47d395;box-shadow:0 0 0 3px #258d6244}
+.w4-powerbi-panel h2{
+  margin:0 0 18px;padding:0;border:0;text-transform:uppercase;
+  font:700 clamp(50px,5.2vw,76px)/.91 var(--display);letter-spacing:-.01em;color:#edf8ff
+}
+.w4-powerbi-panel h2 em{font-style:normal;color:#78d9ad}
+.w4-panel-note{font:400 14px/1.8 var(--body);color:#bdd2df;margin:0 0 23px;max-width:520px}
+.w4-panel-visual{border:3px solid #0b8054;background:#081e30;box-shadow:0 0 0 1px #61aa82}
+.w4-panel-visual-head{
+  display:flex;justify-content:space-between;gap:12px;padding:10px 13px;
+  border-bottom:1px solid #2d7d65;background:#075036;color:#d4fbe6;
+  font:500 9px/1.45 var(--mono);letter-spacing:.04em
+}
+.w4-panel-visual img{display:block;width:100%;height:clamp(160px,24vh,240px);object-fit:contain;background:#fff}
+.w4-panel-visual-foot{
+  padding:9px 13px;color:#b3d4c7;background:#10394d;
+  font:500 11px/1.6 var(--body)
+}
+.w4-panel-actions{margin-top:19px;display:grid;gap:9px}
+.w4-panel-primary,.w4-preview-toggle{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  border:1px solid #48a982;padding:13px 15px;min-height:47px;
+  font:600 11px/1.5 var(--mono);letter-spacing:.04em;
+  cursor:pointer;text-decoration:none;text-align:left;border-radius:0
+}
+.w4-panel-primary{background:#0b794f;color:#f6fff9}
+.w4-panel-primary:hover{background:#168c5f;color:#fff;text-decoration:none}
+.w4-preview-toggle{background:#0a304a;color:#c9ecd9;border-color:#396777}
+.w4-preview-toggle:hover{background:#154c59}
+.w4-panel-primary span,.w4-preview-toggle span{font-size:17px;line-height:1}
+.w4-inline-preview{margin-top:16px;border:1px solid #437c70;background:#082d45}
+.w4-preview-header{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:12px;border-bottom:1px solid #376e69}
+.w4-preview-header strong{color:#bef7d8;font:600 10px var(--mono)}
+.w4-preview-header span{color:#91b1be;font:500 9px var(--mono)}
+.w4-preview-frame-holder{height:clamp(330px,58vh,650px);background:#e6eff4}
+.w4-preview-frame-holder iframe{border:0;display:block;width:100%;height:100%;background:white}
+.w4-inline-preview>p{font:400 12px/1.7 var(--body);color:#b6d6dd;margin:0;padding:10px 14px}
+.w4-panel-disclaimer{margin:17px 0 2px;font:400 11px/1.75 var(--body);color:#90afc0}
+.w4-panel-base{border-top:1px solid #205b55;padding:14px 25px;min-height:43px;font-size:8px}
+.w4-source-strip{
+  display:flex;align-items:center;justify-content:space-between;gap:15px;
+  border-left:3px solid #27b97b;border-top:1px solid #376f67;border-bottom:1px solid #2a5c62;
+  background:#0b3747;padding:15px 19px;margin:4px 0 27px
+}
+.w4-source-strip>div{display:flex;flex-direction:column;gap:3px;min-width:0}
+.w4-source-strip span{font:600 9px var(--mono);color:#78dba9}
+.w4-source-strip strong{font:700 21px var(--display);color:#f0fbff;text-transform:uppercase}
+.w4-source-strip small{font:400 11px var(--body);color:#b0cbd2}
+.w4-source-open,.w4-inline-launch{
+  background:#0d7853;border:1px solid #48ba86;color:#fff;padding:11px 14px;
+  display:inline-flex;justify-content:space-between;align-items:center;gap:14px;
+  font:600 10px/1.4 var(--mono);cursor:pointer;white-space:nowrap
+}
+.w4-source-open:hover,.w4-inline-launch:hover{background:#19885f}
+.w4-source-open span,.w4-inline-launch span{font-size:16px;line-height:1}
+.powerbi-unavailable .w4-inline-launch{margin:3px 0 0}
+@media(max-width:700px){
+  .week4-powerbi-launcher{min-width:190px;padding:9px 11px;gap:9px;right:12px;bottom:12px}
+  .week4-powerbi-launcher .w4-launch-copy strong{font-size:12px}
+  .week4-powerbi-launcher .w4-launch-copy small{font-size:7px}
+  .w4-launch-indicator{width:30px;height:29px;padding:6px}
+  .w4-powerbi-panel{border-left:0}
+  .w4-panel-top{padding:0 16px;min-height:52px}
+  .w4-panel-scroll{padding:20px 17px}
+  .w4-panel-base{padding:12px 16px}
+  .w4-panel-note{font-size:13px}
+  .w4-panel-visual img{height:200px}
+  .w4-source-strip{flex-direction:column;align-items:stretch;padding:14px;gap:13px}
+  .w4-source-open{align-self:flex-start}
+}
+@media(prefers-reduced-motion:reduce){
+  .w4-powerbi-panel{animation:none}
+  .week4-powerbi-launcher{transition:none}
+}

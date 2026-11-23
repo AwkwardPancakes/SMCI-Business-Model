@@ -18,6 +18,12 @@ The completed independent academic case study for **Super Micro Computer, Inc. (
 
 The assignment's required page labels are maintained exactly, including **Operation Analysis** and **Human Resource**.
 
+## Final Week 4 Power BI source access
+
+The Week 4 **Customer Relations** and **Human Resource** pages now expose a compact lower-right **POWER BI REPORT** launcher. Opening the contextual slide-out panel displays a visual preview, a direct link to the completed Week 4 file in the original Full Sail SharePoint share, and an optional in-panel SharePoint preview. The inline view may be blocked by Microsoft authentication, browser frame restrictions, or file-viewing policies; the **OPEN THE SHARED POWER BI FILE** link remains the reliable route.
+
+The linked document is **a SharePoint file share**, not a verified public `app.powerbi.com` report embed address. The site therefore does not claim a live interactive Power BI service dashboard; Figure 53 remains the on-page static Power BI dashboard and the original live embed configuration remains ready for a future valid Power BI report URL. The customer segmentation and workforce figures retain their existing appearance and image enlargement behavior.
+
 ## Power BI visualizations
 
 The site references **66 numbered Power BI image exports**, individually hosted in this repository's root:
